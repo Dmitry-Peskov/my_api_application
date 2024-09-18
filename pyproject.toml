@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "my-api-application"
+version = "0.1.0"
+description = "In this project, I am training in asynchronous API development using packages: FastAPI, SQLAlchemy, Alembic"
+authors = ["Dmitry-Peskov <dv.peskov@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
