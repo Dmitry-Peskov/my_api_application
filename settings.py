@@ -14,6 +14,10 @@ class DatabaseSettings(BaseSettings):
     name: str
     login: str
     password: str
+    echo: bool = True
+    autoflush: bool = False
+    autocommit: bool = False
+    expire_on_commit: bool = False
 
     class Config:
         env_prefix = "DB_"
