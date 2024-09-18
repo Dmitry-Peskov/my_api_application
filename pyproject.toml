@@ -4,9 +4,16 @@ version = "0.1.0"
 description = "In this project, I am training in asynchronous API development using packages: FastAPI, SQLAlchemy, Alembic"
 authors = ["Dmitry-Peskov <dv.peskov@yandex.ru>"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
+fastapi = {extras = ["standard"], version = "^0.115.0"}
+pydantic = {extras = ["email"], version = "^2.9.2"}
+pydantic-settings = "^2.5.2"
+sqlalchemy = "^2.0.35"
+alembic = "^1.13.2"
+asyncpg = "^0.29.0"
 
 
 [build-system]
