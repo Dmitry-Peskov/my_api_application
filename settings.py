@@ -1,4 +1,4 @@
-__all__ = ["db_config"]
+__all__ = ["config"]
 
 from dotenv import load_dotenv
 from pathlib import Path
@@ -26,4 +26,8 @@ class DatabaseSettings(BaseSettings):
         return f"postgresql+asyncpg://{self.login}:{self.password}@{self.host}:{self.port}/{self.name}"
 
 
-db_config = DatabaseSettings()
+class Config(BaseSettings):
+    db: DatabaseSettings = DatabaseSettings()
+
+
+config = Config()

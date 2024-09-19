@@ -1,6 +1,6 @@
 __all__ = ["db"]
 
-from settings import db_config
+from settings import config
 from asyncio import current_task
 from sqlalchemy.ext.asyncio import (
     create_async_engine,
@@ -14,13 +14,13 @@ class DataBase:
 
     def __init__(self):
         self.engine = create_async_engine(
-            url=db_config.dsn,
-            echo=db_config.echo
+            url=config.db.dsn,
+            echo=config.db.echo
         )
         self.session_factory = async_sessionmaker(
             bind=self.engine,
-            autoflush=db_config.autoflush,
-            expire_on_commit=db_config.expire_on_commit
+            autoflush=config.db.autoflush,
+            expire_on_commit=config.db.expire_on_commit
         )
 
     def get_scoped_session(self):
